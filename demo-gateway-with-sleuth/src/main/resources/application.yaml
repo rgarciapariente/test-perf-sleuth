@@ -1,0 +1,11 @@
+env:
+  uri-micro-demo: http://localhost:8090
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: test
+          uri: ${env.uri-micro-demo}
+          predicates:
+            - Path= /**
